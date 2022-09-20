@@ -1,45 +1,88 @@
 @import '../../sass/variables';
 
-      .comment{
+      .comment ,.reply{
             background-color: $white;
             padding: 20px;
             margin: 25px 0px;
             border-radius: 8px;
             position: relative;
 
+            @media(min-width: $desktop) {
+                  display: flex;  
+                  align-items: flex-start;
+                  justify-content: flex-start;                
+            }
+            
+            &__details-top{
+                  display: flex;
+                  justify-content: space-between;
+                  
+                  @media(min-width: $desktop) {
+                        & div {
+                              display: flex;
+                              border: 1px solid red;
+                              align-items: center;
+                        }
+                  }   
+            }
+            &__details, &__buttons{
+                  padding: 0px 25px;
+            }
+
             &__avatar {
                   width: 40px;
                   height: 40px;
                   position: absolute;
-            }
 
+                  @media(min-width: $desktop) {
+                        position: unset;
+                  }                  
+            }
+        
             &__month {
                   position: absolute;
                   top: 25px;
                   right: 60px;
                   color: $grayish-blue;
-            }
 
+                  @media(min-width: $desktop) {
+                        position: unset;
+                  }
+            }
+        
             &__person {
                   position: absolute;
                   top: 25px;
-                  left: 80px;                  
+                  left: 100px;      
+                  @media(min-width: $desktop) {
+                        position: unset;
+                  }            
             }
-
+        
             &__text {
                   padding: 50px 0px;
                   color: $grayish-blue;
                   font-weight: $weight-medium;
-            }
 
+                  @media(min-width: $desktop) {
+                        padding: 0;
+                  }
+            }
+        
             &__reply{
                   position: absolute;
                   bottom: 0;
                   right: 0;
                   margin: 0px 10px;
                   padding: 24px;
-            }
 
+                  @media(min-width: $desktop) {
+                        position: unset;
+                        display: inline-block;
+                        padding: 0;
+                  }
+            }
+        
             &__icon-reply{  
                   margin-right: 10px;
             }
@@ -47,16 +90,12 @@
                   color: $moderate-blue;
                   font-weight: $weight-high;
             }
-
-            
-
             &__input, &__minus, &__plus {
                   width: 10px;
                   padding: 5px;
             }
-
+        
             &__input {
-                  
                   border: 0;
                   outline: none;
                   padding: 0px 10px;
@@ -65,7 +104,7 @@
                   font-weight: $weight-high;
                   font-size: 20px;
             }
-
+        
             &__buttons {
                   align-items: center;
                   background-color: $very-light-gray;
@@ -76,8 +115,15 @@
                   margin: 15px 0px;
                   position: absolute;
                   padding: 6px 10px;
-                  
-                  
+
+
+                  @media(min-width: $desktop) {
+                        position: unset;
+                        flex-direction: column;
+                        margin: 0;
+                  }
             }
-      }
-      
+        }
+        .reply{
+            margin-left: 5%;
+        }
