@@ -17,5 +17,11 @@ body {
 
 .repplies {
     border-left: 4px solid $gray;
+    margin-left: 5%;
 }
+
+
+::-webkit-input-placeholder {
+    text-align:center;
+ }
 

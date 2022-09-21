@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
 //widths
-$mobile: 375px;
+$mobile: 340px;
 $desktop: 1110px;
+$main-container: 700px;
 
 //Primary
 $moderate-blue: hsl(238, 40%, 52%);
@@ -26,3 +27,7 @@ $font-type: 'Kumbh Sans', sans-serif;
 $weight-low: 400;
 $weight-medium: 500;
 $weight-high: 700;
+
+//borders
+
+$border-radius: 8px;

@@ -3,9 +3,9 @@
 .main-content {
       width: $mobile;
       margin: 0 auto;
-      height: 200px;
+      height: 100%;
 
       @media(min-width: $desktop) {
-            width: $desktop;
+            width: $main-container;
       }
 }

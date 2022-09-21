@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-reply',
-  templateUrl: './reply.component.html',
+  selector: 'app-reply-input',
+  templateUrl: './reply-input.component.html',
   styleUrls: ['../shared/comments-styles.component.scss']
 })
-export class ReplyComponent implements OnInit {
+export class ReplyInputComponent implements OnInit {
 
   constructor() { }
 
