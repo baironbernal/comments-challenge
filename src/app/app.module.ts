@@ -6,6 +6,7 @@ import { CommentComponent } from './comment/comment.component';
 import { CommentReplyComponent } from './comment-reply/comment-reply.component';
 import { ReplyComponent } from './reply/reply.component';
 import { ReplyInputComponent } from './reply-input/reply-input.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ReplyInputComponent } from './reply-input/reply-input.component';
     ReplyInputComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

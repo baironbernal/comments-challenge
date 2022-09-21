@@ -3,7 +3,7 @@
 .comment,
 .reply {
     background-color: $white;
-    padding: 20px;
+    padding: 28px;
     margin: 25px 0px;
     border-radius: $border-radius;
     position: relative;
@@ -75,12 +75,21 @@
     .img {
         @include mixin.positionAbsolute(15px 0px, none, none, none, 0);
         padding: 6px 0px;
+
+        @media(min-width: $desktop) {
+            margin-right: 25px;
+            position: unset;
+        }
     }
     &__button-send {
         @include mixin.positionAbsolute(24px, none, 0, none, 0);
         @include mixin.button($moderate-blue, $white, 8px 15px, $border-radius);
         &:hover {
             background-color: $light-grayish-blue;
+        }
+
+        @media(min-width: $desktop) {
+         position: unset;
         }
     }
     &__input-text {
@@ -90,6 +99,10 @@
         margin-bottom: 62px;
         width: 100%;
         outline-color: $moderate-blue;
+
+        @media(min-width: $desktop) {
+            padding: 0px 25px;
+         }
     }
     &__icon-reply {
         margin-right: 10px;
@@ -149,5 +162,6 @@
     @media(min-width: $desktop) {
         display: flex;
         justify-content: space-between;
+        height: 100px;
     }
 }
