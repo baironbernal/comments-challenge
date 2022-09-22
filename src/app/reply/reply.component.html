@@ -1,15 +1,15 @@
 <div class="reply">
       <div class="reply__buttons">
             <img src="assets/images/icon-minus.svg" alt="minus"  class="reply__minus">
-            <input class="reply__input" type="text" name="numer" id="number" value="0">
+            <input class="reply__input" type="text" name="numer" id="number" value="{{reply?.score }}">
             <img src="assets/images/icon-plus.svg" alt="plus"  class="reply__plus">
       </div>
       <div class="reply__details">
             <div class="reply__details-top">
                   <div>
-                        <img class="reply__avatar" src="assets/images/avatars/image-amyrobson.png" alt="avatar">
-                        <b class="reply__person">amyrobson</b>
-                        <span class="reply__month">1 month ago</span>
+                        <img class="reply__avatar" src="{{reply?.user?.image?.png }}" alt="avatar">
+                        <b class="reply__person">{{reply?.user?.username }}</b>
+                        <span class="reply__month">{{reply?.createdAt }}</span>
                   </div>
                   <div class="reply__reply">
                         <img class="reply__icon-reply" src="assets/images/icon-reply.svg" alt="reply">
@@ -17,10 +17,7 @@
                   </div>
             </div>
             <div class="reply__details-comment">
-                  <p class="reply__text">
-                        Impressive! Though it seems the drag feature could be improved.
-                         But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-                  </p>
+                  <p class="reply__text">{{reply?.content }}</p>
             </div>
       </div>
 </div>

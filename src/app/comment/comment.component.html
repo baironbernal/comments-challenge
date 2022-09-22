@@ -1,15 +1,15 @@
 <div class="comment">
       <div class="comment__buttons">
             <img src="assets/images/icon-plus.svg" alt="plus"  class="comment__plus">
-            <input class="comment__input" type="text" name="numer" id="number" value="0">
+            <input class="comment__input" type="text" name="numer" id="number" value="{{comment?.score}}">
             <img src="assets/images/icon-minus.svg" alt="minus"  class="comment__minus">
       </div>
       <div class="comment__details">
             <div class="comment__details-top">
-                  <div>
-                        <img class="comment__avatar" src="assets/images/avatars/image-amyrobson.png" alt="avatar">
-                        <b class="comment__person">amyrobson</b>
-                        <span class="comment__month">1 month ago</span>
+                  <div *ngIf="comment">
+                        <img class="comment__avatar" src="{{ comment?.user?.image?.png }}" alt="avatar">
+                        <b class="comment__person">{{ comment?.user?.username }}</b>
+                        <span class="comment__month">{{ comment?.createdAt }}</span>
                   </div>
                   <div class="comment__reply">
                         <img class="comment__icon-reply" src="assets/images/icon-reply.svg" alt="reply">
@@ -17,18 +17,13 @@
                   </div>
             </div>
             <div class="comment__details-comment">
-                  <p class="comment__text">
-                        Impressive! Though it seems the drag feature could be improved.
-                         But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-                         Impressive! Though it seems the drag feature could be improved.
-                         But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-                         Impressive! Though it seems the drag feature could be improved.
-                         But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-                         Impressive! Though it seems the drag feature could be improved.
-                         But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-                  </p>
+                  <p class="comment__text">{{ comment?.content }}</p>
             </div>
       </div>
 </div>
+
+<article class="repplies" *ngIf="comment?.replies">
+      <app-reply *ngFor="let reply of comment?.replies" [reply]="reply"></app-reply>
+</article>
       
 

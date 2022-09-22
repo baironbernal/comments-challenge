@@ -1,5 +1,6 @@
+import { Comment } from './models/comment';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { informacion } from '../assets/data';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,12 @@ import { HttpClient } from "@angular/common/http";
 export class AppComponent {
   title = 'angular-comments-challenge';
 
-  comments?:Comment;
+  public comments:Comment[];
 
-  constructor(private httpClient: HttpClient){}
+  constructor() {
+    this.comments = [];
+  }
   ngOnInit() {
-    this.httpClient.get("assets/data.json").subscribe(data =>{
-        console.log(data);
-    }); 
+   this.comments = informacion.comments;
   }
 }
