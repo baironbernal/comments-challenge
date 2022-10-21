@@ -13,7 +13,7 @@
                   </div>
                   <div class="comment__reply">
                         <img class="comment__icon-reply" src="assets/images/icon-reply.svg" alt="reply">
-                        <span class="comment__text-reply">Reply</span>
+                        <span class="comment__text-reply" (click)="createComponentReply()">Reply</span>
                   </div>
             </div>
             <div class="comment__details-comment">
@@ -23,6 +23,7 @@
 </div>
 
 <article class="repplies" *ngIf="comment?.replies">
+      <ng-container #replies_comments></ng-container>
       <app-reply *ngFor="let reply of comment?.replies" [reply]="reply"></app-reply>
 </article>
       

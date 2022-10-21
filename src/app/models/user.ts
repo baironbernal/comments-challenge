@@ -1,7 +1,14 @@
 import { Image } from './image';
 
-export interface User {
+export class User {
 
-      image?: Image,
-      username: String
+      public image?: Image;
+      public username?: String;
+
+      constructor(image: Image, username: String) {
+            this.image = image;
+            this.username = username;
+      }
+
+
 }

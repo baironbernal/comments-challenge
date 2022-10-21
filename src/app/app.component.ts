@@ -1,5 +1,5 @@
 import { Comment } from './models/comment';
-import { Component, OnInit } from '@angular/core';
+import { Component, } from '@angular/core';
 import { informacion } from '../assets/data';
 
 @Component({
@@ -8,7 +8,7 @@ import { informacion } from '../assets/data';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-comments-challenge';
+  
 
   public comments:Comment[];
 

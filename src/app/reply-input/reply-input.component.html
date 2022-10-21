@@ -1,5 +1,5 @@
 <div class="reply text">
             <img class="reply__avatar img" src="assets/images/avatars/image-amyrobson.png" alt="avatar">
-            <input class="reply__input-text" name="" placeholder="Add a comment">
-            <button class="reply__button-send">SEND</button>
+            <input class="reply__input-text" name="txtInput" placeholder="Add a comment" [formControl]="txtInput">
+            <button class="reply__button-send" (click)="addComment()">SEND</button>
 </div>

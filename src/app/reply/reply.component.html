@@ -13,7 +13,7 @@
                   </div>
                   <div class="reply__reply">
                         <img class="reply__icon-reply" src="assets/images/icon-reply.svg" alt="reply">
-                        <span class="reply__text-reply">Reply</span>
+                        <span class="reply__text-reply" (click)="createComponentReply()">Reply</span>
                   </div>
             </div>
             <div class="reply__details-comment">
@@ -21,3 +21,5 @@
             </div>
       </div>
 </div>
+
+<ng-container #replies_reply></ng-container>

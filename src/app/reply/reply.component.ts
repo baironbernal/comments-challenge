@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ViewContainerRef } from '@angular/core';
 import { Reply } from '../models/reply';
+import { ReplyInputComponent } from '../reply-input/reply-input.component';
+import { CreateComponentService } from '../services/shared/create-component.service';
 
 @Component({
   selector: 'app-reply',
@@ -8,9 +10,16 @@ import { Reply } from '../models/reply';
 })
 export class ReplyComponent implements OnInit {
 
-  constructor() { }
+  public newReply: any = '';
+  constructor(private createCompServ: CreateComponentService) { }
 
+  @ViewChild('replies_reply',{read:ViewContainerRef}) replies_reply!: ViewContainerRef;
   @Input() reply?: Reply;
+
+
+  createComponentReply() {
+    this.createCompServ.createComponent(this.replies_reply,ReplyInputComponent);
+  }
 
   ngOnInit(): void {
   }
