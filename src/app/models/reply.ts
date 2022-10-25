@@ -5,7 +5,7 @@ export interface Reply {
         content?: String;  
         createdAt?: String;  
         score?: Number;  
-        replyingTo?: String;
-        user?: User;  
+        replyingTo: String;
+        user: User;  
         
 }

@@ -1,30 +1,30 @@
 <div class="comment">
       <div class="comment__buttons">
             <img src="assets/images/icon-plus.svg" alt="plus"  class="comment__plus">
-            <input class="comment__input" type="text" name="numer" id="number" value="{{comment?.score}}">
+            <input class="comment__input" type="text" name="numer" id="number" value="{{comment.score}}">
             <img src="assets/images/icon-minus.svg" alt="minus"  class="comment__minus">
       </div>
       <div class="comment__details">
             <div class="comment__details-top">
                   <div *ngIf="comment">
-                        <img class="comment__avatar" src="{{ comment?.user?.image?.png }}" alt="avatar">
-                        <b class="comment__person">{{ comment?.user?.username }}</b>
-                        <span class="comment__month">{{ comment?.createdAt }}</span>
+                        <img class="comment__avatar" src="{{ comment.user.image.png }}" alt="avatar">
+                        <b class="comment__person">{{ comment.user.username }}</b>
+                        <span class="comment__month">{{ comment.createdAt }}</span>
                   </div>
                   <div class="comment__reply">
                         <img class="comment__icon-reply" src="assets/images/icon-reply.svg" alt="reply">
-                        <span class="comment__text-reply" (click)="createComponentReply()">Reply</span>
+                        <span class="comment__text-reply" (click)="createComponentReply(comment.user.username, 0)">Reply</span>
                   </div>
             </div>
             <div class="comment__details-comment">
-                  <p class="comment__text">{{ comment?.content }}</p>
+                  <p class="comment__text">{{ comment.content }}</p>
             </div>
       </div>
 </div>
 
-<article class="repplies" *ngIf="comment?.replies">
-      <ng-container #replies_comments></ng-container>
-      <app-reply *ngFor="let reply of comment?.replies" [reply]="reply"></app-reply>
+<article class="repplies" *ngIf="comment.replies">
+      <ng-template #replies_comments></ng-template>
+      <app-reply *ngFor="let reply of comment.replies" [reply]="reply"></app-reply>
 </article>
       
 

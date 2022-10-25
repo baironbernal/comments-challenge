@@ -7,9 +7,8 @@ export const initialState: Comment[] = informacion.comments;
 
 const _commentReducer = createReducer(
   initialState,
-  on(actions.create, (state, {content}) => [...state, new Comment(content)]),
+  on(actions.create, (state, {comment: Comment}) => [...state, Comment]),
 );
-
 
 
 export function commentReducer (state: any, action: any) {

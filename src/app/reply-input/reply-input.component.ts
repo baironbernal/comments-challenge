@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducer';
 import { create } from '../comment/comment.actions';
+import { Comment } from '../models/comment';
 
 @Component({
   selector: 'app-reply-input',
@@ -11,20 +12,33 @@ import { create } from '../comment/comment.actions';
 })
 export class ReplyInputComponent implements OnInit {
 
+  @Input() parametro!: string;
   txtInput: FormControl;
+  comment: Comment = new Comment();
+  valueInput: any;
+
   constructor(private store: Store<AppState>) { 
-    this.txtInput = new FormControl('', Validators.required)
+    this.txtInput = new FormControl('', Validators.required);
+    
   }
 
   ngOnInit(): void {
+    console.log(this.valueInput)
   }
 
-  addComment() {
+  addComment(commentId:number = 0) {
     if(this.txtInput.invalid) { return; }
+    if(commentId!) {
+      this.comment = new Comment(this.txtInput.value, "bairp", 1 );
+      this.store.dispatch(create({comment: this.comment}));
+      return this.txtInput.reset();
+    }
 
-    this.store.dispatch(create(this.txtInput.value))
+    //crea un repply
 
-    this.txtInput.reset()
+    
+    
+    
   }
 
 }

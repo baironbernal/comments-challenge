@@ -14,11 +14,10 @@ export class CommentComponent implements OnInit {
   constructor(private createCompServ: CreateComponentService) { }
 
   @ViewChild('replies_comments',{read:ViewContainerRef}) replies_comments!: ViewContainerRef;
-  @Input() comment?: Comment;
+  @Input() comment!: Comment;
 
-
-  createComponentReply() {
-    this.createCompServ.createComponent(this.replies_comments,ReplyInputComponent);
+  createComponentReply(username: any, commentId: number) {
+    this.createCompServ.createComponent(this.replies_comments,ReplyInputComponent, username, commentId);
   }
 
   ngOnInit(): void {

@@ -1,4 +1,10 @@
-export interface Image {
-      png?: String,
-      webp?: String
+export class Image {
+      public png?: String;
+      public webp?: String;
+
+
+      constructor(png: String, webp: String) {
+            this.png = png;
+            this.webp = webp;
+      }
 }

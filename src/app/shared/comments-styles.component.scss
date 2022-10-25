@@ -99,6 +99,7 @@
         margin-bottom: 62px;
         width: 100%;
         outline-color: $moderate-blue;
+        text-align: center;
 
         @media(min-width: $desktop) {
             padding: 0px 25px;
@@ -113,6 +114,7 @@
         &:hover {
             color: $light-grayish-blue;
         }
+
     }
     &__input,
     &__minus,
@@ -155,10 +157,11 @@
 }
 
 .reply {
-    margin-left: 5%;
+   margin-left: 5%;
 }
 
 .text {
+    margin: unset;
     @media(min-width: $desktop) {
         display: flex;
         justify-content: space-between;

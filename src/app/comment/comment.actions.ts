@@ -3,5 +3,5 @@ import { Comment } from '../models/comment';
 
 export const create = createAction(
       'COMMENT Crear comentario',
-      props<{ content: String }>()
+      props<{ comment: Comment }>()
 );
