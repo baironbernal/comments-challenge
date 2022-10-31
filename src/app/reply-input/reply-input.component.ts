@@ -2,8 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducer';
-import { create } from '../comment/comment.actions';
+import { create, createReplyOnComment } from '../comment/comment.actions';
 import { Comment } from '../models/comment';
+import { Reply } from '../models/reply';
 
 @Component({
   selector: 'app-reply-input',
@@ -14,30 +15,33 @@ export class ReplyInputComponent implements OnInit {
 
   @Input() parametro!: string;
   txtInput: FormControl;
-  comment: Comment = new Comment();
+  commentId: number = 0;
+  
   valueInput: any;
 
   constructor(private store: Store<AppState>) { 
     this.txtInput = new FormControl('', Validators.required);
-    
   }
 
-  ngOnInit(): void {
-    console.log(this.valueInput)
-  }
+  ngOnInit(): void {}
 
   addComment(commentId:number = 0) {
+
+    this.commentId = commentId;
     if(this.txtInput.invalid) { return; }
-    if(commentId!) {
-      this.comment = new Comment(this.txtInput.value, "bairp", 1 );
-      this.store.dispatch(create({comment: this.comment}));
-      return this.txtInput.reset();
+
+    if(commentId === 0) {
+      let test = {comment: new Comment(this.txtInput.value, "bairp", 1,  ), commentId};
+      console.log(test)
+      this.store.dispatch(create({comment: new Comment(this.txtInput.value, "bairp", 1,  )}));
+    }
+    else{
+      let test  ={comment: new Comment(this.txtInput.value, "bairp", 1,  ), commentId};
+      console.table("esta entrando o no" +({test}))
+      //this.store.dispatch(createReplyOnComment(test.reply));
     }
 
-    //crea un repply
-
-    
-    
+    return this.txtInput.reset();
     
   }
 

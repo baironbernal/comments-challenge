@@ -3,7 +3,7 @@ import { Reply } from './reply';
 import { Image } from './image';
 
 export class Comment {
-        public id?: Number;  
+        public id: number;  
         public content?: String;  
         public createdAt?: String;  
         public score?: Number;  
@@ -16,6 +16,7 @@ export class Comment {
                 this.user = new User(new Image('assets/images/avatars/image-amyrobson.png', 'assets/images/avatars/image-amyrobson.webp'), username!);
                 this.createdAt = '1 month ago';
                 this.score = score;
+                this.replies = [];
                 
         }
 }

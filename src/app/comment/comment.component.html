@@ -13,7 +13,7 @@
                   </div>
                   <div class="comment__reply">
                         <img class="comment__icon-reply" src="assets/images/icon-reply.svg" alt="reply">
-                        <span class="comment__text-reply" (click)="createComponentReply(comment.user.username, 0)">Reply</span>
+                        <span class="comment__text-reply" (click)="createComponentReply(comment.user.username, comment.id)">Reply</span>
                   </div>
             </div>
             <div class="comment__details-comment">
@@ -23,8 +23,15 @@
 </div>
 
 <article class="repplies" *ngIf="comment.replies">
-      <ng-template #replies_comments></ng-template>
-      <app-reply *ngFor="let reply of comment.replies" [reply]="reply"></app-reply>
+      
+      <div *ngFor="let reply of comment.replies">
+            <app-reply *ngIf="reply.id !== 0;else other_content" [reply]="reply"></app-reply>
+      </div>
+
+      <ng-template #other_content>
+            <app-reply-input></app-reply-input>
+      </ng-template>
+      
 </article>
       
 

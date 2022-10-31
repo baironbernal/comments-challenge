@@ -16,13 +16,13 @@ export class AppComponent {
     this.comments = [];
   }
 
-  trackByItem(index: Number, item: Comment){
+  trackByItem(index: Number, item: Comment) {
     return item.id;
   } 
 
   ngOnInit(): void {
-    this.store.subscribe(({comments}) => {
-        this.comments = comments;
+    this.store.select('comments').subscribe((comments) => {
+        this.comments = comments.reverse();
     });
   }
 

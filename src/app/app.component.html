@@ -1,4 +1,4 @@
 <main class="main-content">
-    <app-reply-input></app-reply-input>
+    <app-reply-input #mainInput></app-reply-input>
     <app-comment *ngFor="let comment of comments; trackBy: trackByItem" [comment]="comment"></app-comment>
 </main>

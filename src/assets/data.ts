@@ -8,8 +8,8 @@ export const informacion = {
   },
   "comments": [
     {
-      "id": 1,
-      "content": "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
+      "id": 2,
+      "content": "Primer comentario Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
       "createdAt": "1 month ago",
       "score": 12,
       "user": {
@@ -21,7 +21,7 @@ export const informacion = {
       },
       "replies": [
         {
-          "id": 3,
+          "id": 1,
           "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
           "createdAt": "1 week ago",
           "score": 4,
@@ -35,49 +35,7 @@ export const informacion = {
           }
         },
         {
-          "id": 3,
-          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
-          "createdAt": "1 week ago",
-          "score": 4,
-          "replyingTo": "maxblagun",
-          "user": {
-            "image": { 
-              "png": "assets/images/avatars/image-ramsesmiron.png",
-              "webp": "assets/images/avatars/image-ramsesmiron.webp"
-            },
-            "username": "ramsesmiron"
-          }
-        },
-        {
-          "id": 3,
-          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
-          "createdAt": "1 week ago",
-          "score": 4,
-          "replyingTo": "maxblagun",
-          "user": {
-            "image": { 
-              "png": "assets/images/avatars/image-ramsesmiron.png",
-              "webp": "assets/images/avatars/image-ramsesmiron.webp"
-            },
-            "username": "ramsesmiron"
-          }
-        },
-        {
-          "id": 3,
-          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
-          "createdAt": "1 week ago",
-          "score": 4,
-          "replyingTo": "maxblagun",
-          "user": {
-            "image": { 
-              "png": "assets/images/avatars/image-ramsesmiron.png",
-              "webp": "assets/images/avatars/image-ramsesmiron.webp"
-            },
-            "username": "ramsesmiron"
-          }
-        },
-        {
-          "id": 3,
+          "id": 2,
           "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
           "createdAt": "1 week ago",
           "score": 4,
@@ -106,6 +64,48 @@ export const informacion = {
         },
         {
           "id": 4,
+          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+          "createdAt": "1 week ago",
+          "score": 4,
+          "replyingTo": "maxblagun",
+          "user": {
+            "image": { 
+              "png": "assets/images/avatars/image-ramsesmiron.png",
+              "webp": "assets/images/avatars/image-ramsesmiron.webp"
+            },
+            "username": "ramsesmiron"
+          }
+        },
+        {
+          "id": 5,
+          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+          "createdAt": "1 week ago",
+          "score": 4,
+          "replyingTo": "maxblagun",
+          "user": {
+            "image": { 
+              "png": "assets/images/avatars/image-ramsesmiron.png",
+              "webp": "assets/images/avatars/image-ramsesmiron.webp"
+            },
+            "username": "ramsesmiron"
+          }
+        },
+        {
+          "id": 6,
+          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+          "createdAt": "1 week ago",
+          "score": 4,
+          "replyingTo": "maxblagun",
+          "user": {
+            "image": { 
+              "png": "assets/images/avatars/image-ramsesmiron.png",
+              "webp": "assets/images/avatars/image-ramsesmiron.webp"
+            },
+            "username": "ramsesmiron"
+          }
+        },
+        {
+          "id": 7,
           "content": "I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
           "createdAt": "2 days ago",
           "score": 2,
@@ -134,7 +134,21 @@ export const informacion = {
       },
       "replies": [
         {
-          "id": 3,
+          "id": 0,
+          "content": "",
+          "createdAt": "1 week ago",
+          "score": 4,
+          "replyingTo": "maxblagun",
+          "user": {
+            "image": { 
+              "png": "assets/images/avatars/image-ramsesmiron.png",
+              "webp": "assets/images/avatars/image-ramsesmiron.webp"
+            },
+            "username": "ramsesmiron"
+          }
+        },
+        {
+          "id": 1,
           "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
           "createdAt": "1 week ago",
           "score": 4,
@@ -148,49 +162,7 @@ export const informacion = {
           }
         },
         {
-          "id": 3,
-          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
-          "createdAt": "1 week ago",
-          "score": 4,
-          "replyingTo": "maxblagun",
-          "user": {
-            "image": { 
-              "png": "assets/images/avatars/image-ramsesmiron.png",
-              "webp": "assets/images/avatars/image-ramsesmiron.webp"
-            },
-            "username": "ramsesmiron"
-          }
-        },
-        {
-          "id": 3,
-          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
-          "createdAt": "1 week ago",
-          "score": 4,
-          "replyingTo": "maxblagun",
-          "user": {
-            "image": { 
-              "png": "assets/images/avatars/image-ramsesmiron.png",
-              "webp": "assets/images/avatars/image-ramsesmiron.webp"
-            },
-            "username": "ramsesmiron"
-          }
-        },
-        {
-          "id": 3,
-          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
-          "createdAt": "1 week ago",
-          "score": 4,
-          "replyingTo": "maxblagun",
-          "user": {
-            "image": { 
-              "png": "assets/images/avatars/image-ramsesmiron.png",
-              "webp": "assets/images/avatars/image-ramsesmiron.webp"
-            },
-            "username": "ramsesmiron"
-          }
-        },
-        {
-          "id": 3,
+          "id": 2,
           "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
           "createdAt": "1 week ago",
           "score": 4,
@@ -219,6 +191,48 @@ export const informacion = {
         },
         {
           "id": 4,
+          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+          "createdAt": "1 week ago",
+          "score": 4,
+          "replyingTo": "maxblagun",
+          "user": {
+            "image": { 
+              "png": "assets/images/avatars/image-ramsesmiron.png",
+              "webp": "assets/images/avatars/image-ramsesmiron.webp"
+            },
+            "username": "ramsesmiron"
+          }
+        },
+        {
+          "id": 5,
+          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+          "createdAt": "1 week ago",
+          "score": 4,
+          "replyingTo": "maxblagun",
+          "user": {
+            "image": { 
+              "png": "assets/images/avatars/image-ramsesmiron.png",
+              "webp": "assets/images/avatars/image-ramsesmiron.webp"
+            },
+            "username": "ramsesmiron"
+          }
+        },
+        {
+          "id": 6,
+          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+          "createdAt": "1 week ago",
+          "score": 4,
+          "replyingTo": "maxblagun",
+          "user": {
+            "image": { 
+              "png": "assets/images/avatars/image-ramsesmiron.png",
+              "webp": "assets/images/avatars/image-ramsesmiron.webp"
+            },
+            "username": "ramsesmiron"
+          }
+        },
+        {
+          "id": 7,
           "content": "I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
           "createdAt": "2 days ago",
           "score": 2,
@@ -232,6 +246,7 @@ export const informacion = {
           }
         }
       ]
+      
     },
   ]
 }
