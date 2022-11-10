@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { appReducers } from './app.reducer';
+import { appReducers } from './state/app.state';
 
     
 @NgModule({

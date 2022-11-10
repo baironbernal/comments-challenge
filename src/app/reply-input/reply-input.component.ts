@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AppState } from '../app.reducer';
+import { AppState } from '../state/app.state';
 import { create } from '../comment/comment.actions';
 import { Comment } from '../models/comment';
 

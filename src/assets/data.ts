@@ -1,11 +1,5 @@
 export const informacion = {
-  "currentUser": {
-    "image": { 
-      "png": "assets/images/avatars/image-juliusomo.png",
-      "webp": "assets/images/avatars/image-juliusomo.webp"
-    },
-    "username": "juliusomo"
-  },
+  "loading": false,
   "comments": [
     {
       "id": 1,

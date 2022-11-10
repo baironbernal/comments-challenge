@@ -1,7 +1,9 @@
 import { Comment } from './models/comment';
 import { Component, } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from './app.reducer';
+import { AppState } from './state/app.state';
+import { Observable } from 'rxjs';
+import { selectCommentsFeature } from './state/selectors/comments.selectors';
 
 @Component({
   selector: 'app-root',
@@ -10,20 +12,18 @@ import { AppState } from './app.reducer';
 })
 export class AppComponent {
 
-  public comments:Comment[];
+  comments$: Observable<Comment[]> = new Observable();
 
-  constructor(private store: Store<AppState>) {
-    this.comments = [];
-  }
+  constructor(private store: Store<AppState>) {}
 
   trackByItem(index: Number, item: Comment){
     return item.id;
   } 
 
   ngOnInit(): void {
-    this.store.subscribe(({comments}) => {
-        this.comments = comments.sort().reverse();
-    });
+    
+    this.comments$ = this.store.select(selectCommentsFeature);
+    
   }
 
   
