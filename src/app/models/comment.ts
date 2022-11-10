@@ -3,7 +3,7 @@ import { Reply } from './reply';
 import { Image } from './image';
 
 export class Comment {
-        public id?: Number;  
+        public id?: number;  
         public content?: String;  
         public createdAt?: String;  
         public score?: Number;  

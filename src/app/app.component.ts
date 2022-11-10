@@ -22,7 +22,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.store.subscribe(({comments}) => {
-        this.comments = comments;
+        this.comments = comments.sort().reverse();
     });
   }
 

@@ -1,4 +1,11 @@
 <main class="main-content">
     <app-reply-input></app-reply-input>
-    <app-comment *ngFor="let comment of comments; trackBy: trackByItem" [comment]="comment"></app-comment>
+    <div *ngFor="let comment of comments; trackBy: trackByItem">
+        <app-comment *ngIf="comment.id;" [comment]="comment"></app-comment>
+        <ng-container *ngIf="comment.id == 0;">
+            <app-reply-input></app-reply-input>
+        </ng-container>
+    </div>
+    
+    
 </main>
