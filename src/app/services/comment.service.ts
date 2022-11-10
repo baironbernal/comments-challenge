@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { informacion } from 'src/assets/data';
-import { ItemsState } from '../models/itemSstate';
+import { Comment } from '../models/comment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,8 @@ import { ItemsState } from '../models/itemSstate';
 export class CommentService {
   constructor() { }
 
-  getDataApi(): Observable<ItemsState> {
-    return of(informacion)
+  getDataApi(): Observable<Comment[]> {
+    
+    return of(informacion.comments)
   }
 }

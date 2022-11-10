@@ -13,8 +13,3 @@ export const selectListItems = createSelector(
     (state: ItemsState) => state.comments //TODO: HIJO
 );
 
-
-export const selectLoading = createSelector(
-    selectCommentsFeature,
-    (state: ItemsState) => state.loading //TODO: HIJO
-);

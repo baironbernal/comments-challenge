@@ -7,15 +7,14 @@ import { CommentService } from '../../services/comment.service';
 @Injectable()
 export class ItemsEffects {
 
-    loadItems$ = createEffect(() => this.actions$.pipe(
-        ofType('COMMENT Cargados comentarios'),
+    load$ = createEffect(() => this.actions$.pipe(
+        ofType('[COMMENT] Cargar comentarios'),
         mergeMap(() => this.CommentService.getDataApi()//TODO Retorna la data [...]
             .pipe(
-                map(items => ({ type: 'COMMENT Crear comentario', items })),
+                map(comments => ({ type: '[COMMENT] Cargados comentarios',  comments})),
                 catchError(() => EMPTY)
             ))
-    )
-    );
+    ));
 
     constructor(
         private actions$: Actions,

@@ -3,7 +3,8 @@ import { Component, } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from './state/app.state';
 import { Observable } from 'rxjs';
-import { selectCommentsFeature } from './state/selectors/comments.selectors';
+import { selectListItems } from './state/selectors/comments.selectors';
+import { load } from './state/actions/comment.actions';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import { selectCommentsFeature } from './state/selectors/comments.selectors';
 })
 export class AppComponent {
 
-  comments$: Observable<Comment[]> = new Observable();
+  comments$: Observable<any> = this.store.select(selectListItems);
 
   constructor(private store: Store<AppState>) {}
 
@@ -21,8 +22,8 @@ export class AppComponent {
   } 
 
   ngOnInit(): void {
+    this.store.dispatch(load());
     
-    this.comments$ = this.store.select(selectCommentsFeature);
     
   }
 

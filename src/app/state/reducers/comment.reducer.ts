@@ -2,17 +2,18 @@ import { createReducer, on } from '@ngrx/store';
 import * as actions from '../actions/comment.actions';
 import { ItemsState } from '../../models/itemSstate';
 
-export const initialState: ItemsState = { loading: false, comments: [] };
+export const initialState: ItemsState = { comments: [] };
 
 const _commentReducer = createReducer(
   initialState,
- 
-
   on(actions.load, (state) => { //TODO:!
-    return { ...state, loading: true }
+    return { ...state }
   }),
   on(actions.loadedItems, (state, { comments }) => { //TODO:!
-    return { ...state, loading: false, comments }
+    return { 
+      ...state, 
+      comments
+    }
   })
 );
 

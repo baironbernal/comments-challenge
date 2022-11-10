@@ -1,5 +1,4 @@
 export const informacion = {
-  "loading": false,
   "comments": [
     {
       "id": 1,

@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '../state/app.state';
-import { create } from '../comment/comment.actions';
 import { Comment } from '../models/comment';
+import { create } from '../state/actions/comment.actions';
 
 @Component({
   selector: 'app-reply-input',
