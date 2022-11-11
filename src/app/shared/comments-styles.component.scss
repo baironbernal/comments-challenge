@@ -2,7 +2,7 @@
 @import '../../sass/variables';
 .comment,
 .reply {
-    background-color: $white;
+    background-color: $dark;
     padding: 28px;
     margin: 25px 0px;
     border-radius: $border-radius;
@@ -93,11 +93,13 @@
         }
     }
     &__input-text {
+        background-color: $dark-basic;
         border: 1px solid $gray;
         border-radius: $border-radius;
         height: 100px;
         margin-bottom: 62px;
         width: 100%;
+        color: $white;
         outline-color: $moderate-blue;
         text-align: center;
 
@@ -126,17 +128,17 @@
         }
     }
     &__input {
+        background-color: inherit;
         border: 0;
         outline: none;
         padding: 0px 10px;
-        background-color: $very-light-gray;
         color: $moderate-blue;
         font-weight: $weight-high;
         font-size: 20px;
     }
     &__buttons {
         align-items: center;
-        background-color: $very-light-gray;
+        background-color: $dark-basic;
         border-radius: $border-radius;
         bottom: 0;
         display: flex;

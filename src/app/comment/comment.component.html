@@ -23,7 +23,11 @@
 </div>
 
 <article class="repplies" *ngIf="comment.replies">
-      <app-reply *ngFor="let reply of comment.replies" [reply]="reply"></app-reply>
+    
+      <div *ngFor="let reply of comment.replies">
+            <app-reply *ngIf="reply.id" [reply]="reply"></app-reply> 
+            <ng-container *ngIf="reply.id == 0;">
+                  <app-reply-input></app-reply-input>
+              </ng-container>
+      </div>
 </article>
-      
-

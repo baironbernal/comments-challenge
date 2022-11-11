@@ -8,12 +8,13 @@
 }
 
 body {
-    background-color: $light-gray;
+    background-color: $dark-basic;
+    color: $light-gray;
     font-family: $font-type;
     font-size: $font-size;
     line-height: 1.6em;
+    height: auto;
 }
-
 
 .repplies {
     border-left: 4px solid $gray;

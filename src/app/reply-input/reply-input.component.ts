@@ -14,7 +14,7 @@ export class ReplyInputComponent implements OnInit {
 
   @Input() parametro!: string;
   txtInput: FormControl;
-  comment: Comment = new Comment();
+  comment: Comment = new Comment(0,'');
   valueInput: any;
   username!: string;
   commentId!: number;
@@ -31,7 +31,7 @@ export class ReplyInputComponent implements OnInit {
   addComment(commentId:number = 0) {
     if(this.txtInput.invalid) { return; }
     if(!commentId) {
-      this.comment = new Comment(this.txtInput.value, "bairp", 1 );
+      this.comment = new Comment(Math.random(),this.txtInput.value, "bairp",  1);
       this.store.dispatch(create({comment: this.comment}));
       return this.txtInput.reset();
     }

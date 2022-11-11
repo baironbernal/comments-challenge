@@ -11,6 +11,6 @@ export class CommentService {
 
   getDataApi(): Observable<Comment[]> {
     
-    return of(informacion.comments)
+    return of(informacion.comments.sort().reverse())
   }
 }
