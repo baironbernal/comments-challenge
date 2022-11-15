@@ -17,6 +17,5 @@ export class Comment {
                 this.createdAt = '1 month ago';
                 this.score = score;
                 this.replies = []
-                
         }
 }

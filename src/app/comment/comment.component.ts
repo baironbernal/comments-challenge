@@ -1,14 +1,23 @@
+import { transitionAnimation } from './../animations/animations';
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Comment } from '../models/comment';
-import { ReplyInputComponent } from '../reply-input/reply-input.component';
 import { AppState } from '../state/app.state';
 import { createInputReply } from '../state/actions/comment.actions';
+import { useAnimation } from '@angular/animations';
+import {trigger,transition} from '@angular/animations';
 
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
-  styleUrls: ['../shared/comments-styles.component.scss']
+  styleUrls: ['../shared/comments-styles.component.scss'],
+  animations: [
+    trigger('simpleFadeAnimation', [
+      transition(':enter', [
+        useAnimation(transitionAnimation)
+      ]),
+    ])
+  ],
 })
 export class CommentComponent implements OnInit {
 
@@ -21,7 +30,6 @@ export class CommentComponent implements OnInit {
     this.store.dispatch(createInputReply({username, commentId}))
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

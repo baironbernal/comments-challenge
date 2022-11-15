@@ -10,11 +10,12 @@ export class ReplyComponent implements OnInit {
 
   public newReply: any = '';
   constructor() { }
-
+  
   @Input() reply!: Reply;
+  @Input() commentId!: number;
 
   answerReply() {
-    
+    console.log(this.reply, this.commentId)
   }
 
   ngOnInit(): void {

@@ -4,11 +4,20 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../state/app.state';
 import { Comment } from '../models/comment';
 import { create } from '../state/actions/comment.actions';
+import { trigger, transition, useAnimation } from '@angular/animations';
+import { transitionAnimation } from '../animations/animations';
 
 @Component({
   selector: 'app-reply-input',
   templateUrl: './reply-input.component.html',
-  styleUrls: ['../shared/comments-styles.component.scss']
+  styleUrls: ['../shared/comments-styles.component.scss'],
+  animations: [
+    trigger('simpleFadeAnimation', [
+      transition(':enter', [
+        useAnimation(transitionAnimation)
+      ]),
+    ])
+  ],
 })
 export class ReplyInputComponent implements OnInit {
 
