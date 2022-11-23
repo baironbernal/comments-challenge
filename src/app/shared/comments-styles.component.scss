@@ -9,8 +9,6 @@
     position: relative;
     @media(min-width: $desktop) {
         display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
     }
     &__details-top {
         display: flex;
@@ -131,10 +129,11 @@
         background-color: inherit;
         border: 0;
         outline: none;
-        padding: 0px 10px;
+        text-align: center;
         color: $moderate-blue;
         font-weight: $weight-high;
         font-size: 20px;
+        width: 1.2em;
     }
     &__buttons {
         align-items: center;

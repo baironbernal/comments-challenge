@@ -2,7 +2,6 @@
             <img class="reply__avatar img" src="assets/images/avatars/image-amyrobson.png" alt="avatar">
             <input class="reply__input-text" name="txtInput" 
                   placeholder="Add comment" [formControl]="txtInput" 
-                  [ngModel]="valueInput " 
-                  username="valueInput">
+                  [ngModel]="replyingTo" >
             <button class="reply__button-send" (click)="addComment()">SEND</button>
 </div>

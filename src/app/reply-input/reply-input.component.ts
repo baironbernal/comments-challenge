@@ -21,27 +21,23 @@ import { transitionAnimation } from '../animations/animations';
 })
 export class ReplyInputComponent implements OnInit {
 
-  @Input() parametro!: string;
   txtInput: FormControl;
   comment: Comment = new Comment(0,'');
-  valueInput: any;
-  username!: string;
   commentId!: number;
   replyId!: number;
 
   constructor(private store: Store<AppState>) {
     this.txtInput = new FormControl('', Validators.required);
   }
-
-  ngOnInit(): void {
-    console.log(this.username, this.commentId, this.replyId)
-  }
+  
+  @Input() replyingTo!: any;
+  ngOnInit(): void {}
 
   addComment(commentId:number = 0) {
     if(this.txtInput.invalid) { return; }
     if(!commentId) {
       this.comment = new Comment(Math.random(),this.txtInput.value, "bairp",  1);
-      this.store.dispatch(create({comment: this.comment}));
+      this.store.dispatch(create({comment: this.comment, concept: "comment"}));
       return this.txtInput.reset();
     }
   }

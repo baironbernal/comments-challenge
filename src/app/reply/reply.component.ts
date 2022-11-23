@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Reply } from '../models/reply';
+import { Store } from '@ngrx/store';
+import { AppState } from '../state/app.state';
+import { createInputReply } from '../state/actions/comment.actions';
 
 @Component({
   selector: 'app-reply',
@@ -9,13 +12,13 @@ import { Reply } from '../models/reply';
 export class ReplyComponent implements OnInit {
 
   public newReply: any = '';
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
   
   @Input() reply!: Reply;
   @Input() commentId!: number;
 
-  answerReply() {
-    console.log(this.reply, this.commentId)
+  answerReply(username: any, commentId: number) {
+    this.store.dispatch(createInputReply({username, commentId}))
   }
 
   ngOnInit(): void {

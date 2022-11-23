@@ -23,8 +23,6 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.store.dispatch(load());
-    
-    
   }
 
   

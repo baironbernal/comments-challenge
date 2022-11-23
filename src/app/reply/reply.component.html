@@ -11,7 +11,7 @@
                         <b class="reply__person">{{reply.user.username }}</b>
                         <span class="reply__month">{{reply.createdAt }}</span>
                   </div>
-                  <div class="reply__reply" (click)="answerReply()">
+                  <div class="reply__reply" (click)="answerReply(reply.user.username, commentId)">
                         <img class="reply__icon-reply" src="assets/images/icon-reply.svg" alt="reply">
                         <span class="reply__text-reply">Reply</span>
                   </div>

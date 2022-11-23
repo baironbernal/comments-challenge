@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Comment } from '../models/comment';
 import { AppState } from '../state/app.state';
-import { createInputReply } from '../state/actions/comment.actions';
+import { createInputReply, plusOrLess } from '../state/actions/comment.actions';
 import { useAnimation } from '@angular/animations';
 import {trigger,transition} from '@angular/animations';
 
@@ -28,6 +28,10 @@ export class CommentComponent implements OnInit {
 
   reply(username: any, commentId: number = 0) {
     this.store.dispatch(createInputReply({username, commentId}))
+  }
+
+  plusOrLess(commentId: number, operation: number) {
+    this.store.dispatch(plusOrLess({commentId, operation}))
   }
 
   ngOnInit(): void {}

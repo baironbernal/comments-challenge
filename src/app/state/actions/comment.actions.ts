@@ -12,10 +12,15 @@ export const loadedItems = createAction(
 
 export const create = createAction(
       '[COMMENT] Crear comentario',
-      props<{ comment: Comment }>()
+      props<{ comment: Comment, concept: string }>()
 );
 
 export const createInputReply = createAction(
       '[COMMENT] Crear  input de respuesta a comentario',
       props<{ username: string, commentId: number }>()
+);
+
+export const plusOrLess = createAction(
+      '[COMMENT] Sumar puntaje de comentario',
+      props<{ commentId: number, operation: number }>()
 );

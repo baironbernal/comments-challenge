@@ -6,7 +6,7 @@ export class Comment {
         public id!: number;  
         public content?: String;  
         public createdAt!: String;  
-        public score?: Number;  
+        public score!: number;  
         public user!: User;  
         public replies?: Reply[];
 

@@ -1,8 +1,8 @@
 <div class="comment"  [@simpleFadeAnimation]="'in'">
       <div class="comment__buttons">
-            <img src="assets/images/icon-plus.svg" alt="plus"  class="comment__plus">
+            <img src="assets/images/icon-plus.svg" alt="plus"  class="comment__plus" (click)="plusOrLess(comment.id, 1)">
             <input class="comment__input" type="text" name="numer" id="number" value="{{comment.score}}">
-            <img src="assets/images/icon-minus.svg" alt="minus"  class="comment__minus">
+            <img src="assets/images/icon-minus.svg" alt="minus"  class="comment__minus" (click)="plusOrLess(comment.id, -1)">
       </div>
       <div class="comment__details">
             <div class="comment__details-top">
@@ -26,7 +26,7 @@
       <div *ngFor="let reply of comment.replies">
             <app-reply *ngIf="reply.id" [reply]="reply" [commentId]="comment.id"></app-reply> 
             <ng-container *ngIf="reply.id == 0;">
-                  <app-reply-input @openClose></app-reply-input>
+                  <app-reply-input [replyingTo]="reply.user.username"></app-reply-input>
               </ng-container>
       </div>
 </section>
