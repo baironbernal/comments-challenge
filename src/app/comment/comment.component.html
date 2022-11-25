@@ -26,7 +26,7 @@
       <div *ngFor="let reply of comment.replies">
             <app-reply *ngIf="reply.id" [reply]="reply" [commentId]="comment.id"></app-reply> 
             <ng-container *ngIf="reply.id == 0;">
-                  <app-reply-input [replyingTo]="reply.user.username"></app-reply-input>
+                  <app-reply-input [commentId]="comment.id"></app-reply-input>
               </ng-container>
       </div>
 </section>

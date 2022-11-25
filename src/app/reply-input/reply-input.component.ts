@@ -3,9 +3,10 @@ import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '../state/app.state';
 import { Comment } from '../models/comment';
-import { create } from '../state/actions/comment.actions';
+import { create, reply } from '../state/actions/comment.actions';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { transitionAnimation } from '../animations/animations';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-reply-input',
@@ -20,26 +21,30 @@ import { transitionAnimation } from '../animations/animations';
   ],
 })
 export class ReplyInputComponent implements OnInit {
-
+  replyingToSus: Subscription = new Subscription();
+  replyingTo!: any;
   txtInput: FormControl;
-  comment: Comment = new Comment(0,'');
-  commentId!: number;
   replyId!: number;
 
   constructor(private store: Store<AppState>) {
     this.txtInput = new FormControl('', Validators.required);
   }
   
-  @Input() replyingTo!: any;
-  ngOnInit(): void {}
-
-  addComment(commentId:number = 0) {
-    if(this.txtInput.invalid) { return; }
-    if(!commentId) {
-      this.comment = new Comment(Math.random(),this.txtInput.value, "bairp",  1);
-      this.store.dispatch(create({comment: this.comment, concept: "comment"}));
-      return this.txtInput.reset();
+  @Input() commentId!: number;
+  ngOnInit(): void {
+    if (this.commentId) {
+      this.replyingToSus = this.store.select('replyngTo').subscribe(replyngTo => this.replyingTo = replyngTo.username)
     }
+  }
+
+  ngOnDestroy() {
+    this.replyingToSus.unsubscribe()
+  }
+
+  addComment() {
+    if(this.txtInput.invalid) { return; }
+    if(!this.commentId) return this.store.dispatch(create({comment: new Comment(Math.random(),this.txtInput.value, "bairp",  1)}));
+    return this.store.dispatch(reply({ content: this.txtInput.value, commentId: this.commentId  }));
   }
 
 }

@@ -10,10 +10,10 @@ export class Reply {
         public user!: User;
 
 
-        constructor(id:number = 0, content: String, score: number) {
+        constructor(id:number = 0, content: String, score: number, replyingTo: string) {
                 this.id = id;
                 this.content = content;
-                this.replyingTo = "ramsesmiron";
+                this.replyingTo = replyingTo;
                 this.user = new User(new Image('assets/images/avatars/image-amyrobson.png', 'assets/images/avatars/image-amyrobson.webp'), "bgb");
                 this.createdAt = '1 month ago';
                 this.score = score;
