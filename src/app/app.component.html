@@ -1,6 +1,6 @@
 <main class="main-content">
-    <app-reply-input></app-reply-input>
     <div *ngFor="let comment of comments$ | async; trackBy: trackByItem">
         <app-comment *ngIf="comment.id;" [comment]="comment"></app-comment>
     </div>
+    <app-reply-input></app-reply-input>
 </main>

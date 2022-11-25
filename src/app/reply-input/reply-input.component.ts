@@ -43,8 +43,9 @@ export class ReplyInputComponent implements OnInit {
 
   addComment() {
     if(this.txtInput.invalid) { return; }
-    if(!this.commentId) return this.store.dispatch(create({comment: new Comment(Math.random(),this.txtInput.value, "bairp",  1)}));
-    return this.store.dispatch(reply({ content: this.txtInput.value, commentId: this.commentId  }));
+    if(!this.commentId)  this.store.dispatch(create({comment: new Comment(Math.random(),this.txtInput.value, "bairp",  1)}));
+    else this.store.dispatch(reply({ content: this.txtInput.value, commentId: this.commentId  }));
+    this.txtInput.reset();
   }
 
 }
